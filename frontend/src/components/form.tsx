@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ISupervisorData } from "../models/interfaces";
+import "./Form.css";
 
 function Form() {
   const [state, setState] = useState({
@@ -160,9 +161,6 @@ function Form() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    // setState({ ...state });
-
     setState((prevState) => ({
       ...prevState,
       formData: {
@@ -177,14 +175,16 @@ function Form() {
   return (
     state.data && (
       <>
-        <p>Notification Form</p>
-        <form onSubmit={handleSubmit}>
-          {state.formErrors && state.formErrors.firstName ? (
-            <span>{state.formErrors.firstName}</span>
-          ) : null}
-          {state.formErrors && state.formErrors.lastName ? (
-            <span>{state.formErrors.lastName}</span>
-          ) : null}
+        <h2 className="formTitle">Notification Form</h2>
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="formError1">
+            {state.formErrors && state.formErrors.firstName ? (
+              <span>{"* " + state.formErrors.firstName + " *"}</span>
+            ) : null}
+            {state.formErrors && state.formErrors.lastName ? (
+              <span>{"* " + state.formErrors.lastName + " *"}</span>
+            ) : null}
+          </div>
           <div>
             <label>
               First Name
@@ -205,9 +205,15 @@ function Form() {
               />
             </label>
           </div>
-          {state.formErrors && state.formErrors.phoneNumber ? (
-            <span>{state.formErrors.phoneNumber}</span>
-          ) : null}
+          <div className="formError1">
+            {state.formErrors && state.formErrors.phoneNumber ? (
+              <>
+                <span></span>
+                <span>{"* " + state.formErrors.phoneNumber + " *"}</span>
+              </>
+            ) : null}
+          </div>
+
           <div>
             <label>
               Email
@@ -245,13 +251,14 @@ function Form() {
               </select>
             </label>
           </div>
-          {state.formErrors && state.formErrors.supervisor ? (
-            <div>{state.formErrors.supervisor}</div>
-          ) : null}
-
+          <div className="formError2">
+            {state.formErrors && state.formErrors.supervisor ? (
+              <div>{"* " + state.formErrors.supervisor + " *"}</div>
+            ) : null}
+          </div>
           <button type="submit">Send</button>
           {state.formSubmitSuccess ? (
-            <div>{formSubmitSuccessString}</div>
+            <div className="success">{"* " + formSubmitSuccessString + " *"}</div>
           ) : null}
         </form>
       </>

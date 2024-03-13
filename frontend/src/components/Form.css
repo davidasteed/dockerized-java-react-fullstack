@@ -1,0 +1,26 @@
+.formTitle {
+  background-color: #6B8085;
+  color: black;
+  margin-block-end: auto;
+}
+
+.form {
+  background-color: #C7D2D7;
+  padding: 20px;
+}
+
+.formError1 {
+  color: red;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.formError2 {
+  color: red;
+  margin-bottom: 4px;
+}
+
+.success {
+  color: purple;
+}
