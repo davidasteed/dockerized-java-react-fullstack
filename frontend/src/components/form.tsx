@@ -18,8 +18,11 @@ function Form() {
       lastName: "",
       phoneNumber: "",
       supervisor: ""
-    }
+    },
+    formSubmitSuccess: false
   });
+
+  const formSubmitSuccessString = "Successfully submitted!";
 
   const createSupervisorList = (data: Array<ISupervisorData>) => {
     const returnValue: string[] = [];
@@ -77,14 +80,39 @@ function Form() {
     }));
   }, [state.supervisorList, state.displayIndex]);
 
+  const clearFormData = () => {
+    ["firstName", "lastName", "phoneNumber", "supervisor"].forEach((str) => {
+      setState((prevState) => ({
+        ...prevState,
+        formErrors: {
+          ...prevState.formErrors,
+          [str]: ""
+        }
+      }));
+    });
+    setState((prevState) => ({
+      ...prevState,
+      formSubmitSuccess: false
+    }));
+  };
+
   const postData = async () => {
+    clearFormData();
     fetch("http://localhost:8080/api/submit", {
       method: "POST",
       mode: "cors",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(state.formData)
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.status === 200) {
+          setState((prevState) => ({
+            ...prevState,
+            formSubmitSuccess: true
+          }));
+        }
+        return response.json();
+      })
       .then((data) => {
         if (data.apierror && data.apierror.subErrors) {
           data.apierror.subErrors.forEach((subError) => {
@@ -97,7 +125,6 @@ function Form() {
             }));
           });
         }
-        console.log(data);
       })
       .catch((err) => {
         console.log(err.message);
@@ -223,6 +250,9 @@ function Form() {
           ) : null}
 
           <button type="submit">Send</button>
+          {state.formSubmitSuccess ? (
+            <div>{formSubmitSuccessString}</div>
+          ) : null}
         </form>
       </>
     )
