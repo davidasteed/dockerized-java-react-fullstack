@@ -1,4 +1,4 @@
-package com.lightfeather.supervisorMgmt;
+package com.dockerizedjavareact.supervisorMgmt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

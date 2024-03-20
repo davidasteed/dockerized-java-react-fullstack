@@ -1,4 +1,4 @@
-package com.lightfeather.supervisorMgmt.utils;
+package com.dockerizedjavareact.supervisorMgmt.utils;
 
 import java.util.ArrayList;
 import java.util.Collections;

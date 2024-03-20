@@ -1,4 +1,4 @@
-package com.lightfeather.supervisorMgmt.controller;
+package com.dockerizedjavareact.supervisorMgmt.controller;
 
 import java.io.IOException;
 
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lightfeather.supervisorMgmt.models.SupervisorNotification;
-import com.lightfeather.supervisorMgmt.models.dtos.SupervisorNotificationDto;
-import com.lightfeather.supervisorMgmt.services.interfaces.SupervisorMgmtService;
+import com.dockerizedjavareact.supervisorMgmt.models.SupervisorNotification;
+import com.dockerizedjavareact.supervisorMgmt.models.dtos.SupervisorNotificationDto;
+import com.dockerizedjavareact.supervisorMgmt.services.interfaces.SupervisorMgmtService;
 
 import jakarta.validation.Valid;
 

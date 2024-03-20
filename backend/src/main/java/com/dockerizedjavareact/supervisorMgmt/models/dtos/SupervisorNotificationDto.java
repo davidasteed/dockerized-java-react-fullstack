@@ -1,8 +1,8 @@
-package com.lightfeather.supervisorMgmt.models.dtos;
+package com.dockerizedjavareact.supervisorMgmt.models.dtos;
 
-import com.lightfeather.supervisorMgmt.apiError.interfaces.NameConstraintValidator;
-import com.lightfeather.supervisorMgmt.apiError.interfaces.PhoneNumberConstraintValidator;
-import com.lightfeather.supervisorMgmt.models.SupervisorNotification;
+import com.dockerizedjavareact.supervisorMgmt.apiError.interfaces.NameConstraintValidator;
+import com.dockerizedjavareact.supervisorMgmt.apiError.interfaces.PhoneNumberConstraintValidator;
+import com.dockerizedjavareact.supervisorMgmt.models.SupervisorNotification;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;

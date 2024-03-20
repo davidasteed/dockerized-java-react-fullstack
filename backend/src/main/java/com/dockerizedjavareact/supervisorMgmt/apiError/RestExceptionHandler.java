@@ -1,4 +1,4 @@
-package com.lightfeather.supervisorMgmt.apiError;
+package com.dockerizedjavareact.supervisorMgmt.apiError;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.NOT_FOUND;

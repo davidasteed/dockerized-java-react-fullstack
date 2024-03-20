@@ -8,11 +8,11 @@
 		<version>3.2.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.lightfeather</groupId>
+	<groupId>com.dockerizedjavareact</groupId>
 	<artifactId>SupervisorNotification</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>supervisorNotification</name>
-	<description>Lightfeather backend for Supervisor Notification microservice</description>
+	<description>dockerizedjavareact backend for Supervisor Notification microservice</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

@@ -1,11 +1,11 @@
-package com.lightfeather.supervisorMgmt.apiError;
+package com.dockerizedjavareact.supervisorMgmt.apiError;
 
 import java.util.regex.Pattern;
 
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.stereotype.Component;
 
-import com.lightfeather.supervisorMgmt.apiError.interfaces.PhoneNumberConstraintValidator;
+import com.dockerizedjavareact.supervisorMgmt.apiError.interfaces.PhoneNumberConstraintValidator;
 
 import jakarta.validation.ConstraintValidatorContext;
 

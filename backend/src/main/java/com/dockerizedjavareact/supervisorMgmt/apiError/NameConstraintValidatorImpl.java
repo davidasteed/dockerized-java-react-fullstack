@@ -1,10 +1,10 @@
-package com.lightfeather.supervisorMgmt.apiError;
+package com.dockerizedjavareact.supervisorMgmt.apiError;
 
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.stereotype.Component;
 
-import com.lightfeather.supervisorMgmt.apiError.interfaces.NameConstraintValidator;
-import com.lightfeather.supervisorMgmt.utils.Utils;
+import com.dockerizedjavareact.supervisorMgmt.apiError.interfaces.NameConstraintValidator;
+import com.dockerizedjavareact.supervisorMgmt.utils.Utils;
 
 import jakarta.validation.ConstraintValidatorContext;
 

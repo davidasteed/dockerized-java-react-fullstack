@@ -1,4 +1,4 @@
-package com.lightfeather.supervisorMgmt.utils;
+package com.dockerizedjavareact.supervisorMgmt.utils;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.jsontype.impl.TypeIdResolverBase;

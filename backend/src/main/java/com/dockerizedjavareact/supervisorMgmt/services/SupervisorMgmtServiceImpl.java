@@ -1,4 +1,4 @@
-package com.lightfeather.supervisorMgmt.services;
+package com.dockerizedjavareact.supervisorMgmt.services;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,14 +9,14 @@ import java.net.URL;
 import org.json.JSONArray;
 import org.springframework.stereotype.Component;
 
-import com.lightfeather.supervisorMgmt.models.SupervisorNotification;
-import com.lightfeather.supervisorMgmt.services.interfaces.SupervisorMgmtService;
-import com.lightfeather.supervisorMgmt.utils.Utils;
+import com.dockerizedjavareact.supervisorMgmt.models.SupervisorNotification;
+import com.dockerizedjavareact.supervisorMgmt.services.interfaces.SupervisorMgmtService;
+import com.dockerizedjavareact.supervisorMgmt.utils.Utils;
 
 @Component
 public class SupervisorMgmtServiceImpl implements SupervisorMgmtService {
 	public static final String externalSupervisorURL = "https://o3m5qixdng.execute-api.us-east-1.amazonaws.com/api/managers";
-	public static final String USER_AGENT = "LightfeatherService";
+	public static final String USER_AGENT = "dockerizedjavareactService";
 
 	public JSONArray getSupervisorData() throws IOException {
 		URL supervisorUrl = new URL(externalSupervisorURL);

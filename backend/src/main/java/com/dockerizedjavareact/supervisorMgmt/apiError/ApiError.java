@@ -1,4 +1,4 @@
-package com.lightfeather.supervisorMgmt.apiError;
+package com.dockerizedjavareact.supervisorMgmt.apiError;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import org.springframework.validation.ObjectError;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonTypeIdResolver;
-import com.lightfeather.supervisorMgmt.utils.LowerCaseClassNameResolver;
+import com.dockerizedjavareact.supervisorMgmt.utils.LowerCaseClassNameResolver;
 
 import lombok.Data;
 

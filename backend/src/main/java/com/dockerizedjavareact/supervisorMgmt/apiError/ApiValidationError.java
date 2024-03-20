@@ -1,4 +1,4 @@
-package com.lightfeather.supervisorMgmt.apiError;
+package com.dockerizedjavareact.supervisorMgmt.apiError;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

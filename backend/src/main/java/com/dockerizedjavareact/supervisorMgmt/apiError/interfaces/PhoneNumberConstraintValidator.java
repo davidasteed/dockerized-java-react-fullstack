@@ -1,4 +1,4 @@
-package com.lightfeather.supervisorMgmt.apiError.interfaces;
+package com.dockerizedjavareact.supervisorMgmt.apiError.interfaces;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -8,16 +8,16 @@ import java.lang.annotation.Target;
 
 import javax.validation.Payload;
 
-import com.lightfeather.supervisorMgmt.apiError.NameConstraintValidatorImpl;
+import com.dockerizedjavareact.supervisorMgmt.apiError.PhoneNumberConstraintValidatorImpl;
 
 import jakarta.validation.Constraint;
 
 @Target({ ElementType.METHOD, ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = { NameConstraintValidatorImpl.class })
+@Constraint(validatedBy = { PhoneNumberConstraintValidatorImpl.class })
 @Documented
-public @interface NameConstraintValidator {
-	String message() default "Must only contain letters, no numbers";
+public @interface PhoneNumberConstraintValidator {
+	String message() default "Must be valid phone number";
 
 	Class<?>[] groups() default {};
 

@@ -1,4 +1,4 @@
-package com.lightfeather.supervisorMgmt.models;
+package com.dockerizedjavareact.supervisorMgmt.models;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

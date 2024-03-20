@@ -1,4 +1,4 @@
-package com.lightfeather.supervisorMgmt;
+package com.dockerizedjavareact.supervisorMgmt;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
