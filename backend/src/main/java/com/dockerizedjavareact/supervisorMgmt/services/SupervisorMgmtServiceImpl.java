@@ -1,8 +1,7 @@
 package com.dockerizedjavareact.supervisorMgmt.services;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -29,20 +28,23 @@ public class SupervisorMgmtServiceImpl implements SupervisorMgmtService {
 			System.out.println("getSupervisors() GET response code: " + responseCode);
 
 			if (responseCode == HttpURLConnection.HTTP_OK) {
-				BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-				String inputLine;
-				StringBuffer responseStringBuffer = new StringBuffer();
+				InputStream iStream = connection.getInputStream();
+				StringBuffer responseStringBuffer = Utils.createInputStream(iStream);
 
-				while ((inputLine = in.readLine()) != null) {
-					responseStringBuffer.append(inputLine);
-				}
-				in.close();
 				responseArray = Utils.createSupervisorData(responseStringBuffer.toString());
 				System.out.println("getSupervisors() GET response object: " + responseArray);
 				return responseArray;
 			}
 		} catch (Exception E) {
 			System.out.println("getSupervisors() GET request failed");
+		} finally {
+			// provide sample supervisor data if there is a problem with the public data source
+			if (responseArray.length() == 0) {
+				InputStream iStream = this.getClass().getResourceAsStream("./sampleSupervisorData.json");
+				StringBuffer responseStringBuffer = Utils.createInputStream(iStream);
+				responseArray = Utils.createSupervisorData(responseStringBuffer.toString());
+				System.out.println("getSupervisors() sample data: " + responseArray);
+			}
 		}
 		return responseArray;
 	}

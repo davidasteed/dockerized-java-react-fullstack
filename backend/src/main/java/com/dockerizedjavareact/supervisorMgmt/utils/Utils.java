@@ -1,5 +1,8 @@
 package com.dockerizedjavareact.supervisorMgmt.utils;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -151,5 +154,22 @@ public class Utils {
 			}
 		}
 		return false;
+	}
+
+	public static StringBuffer createInputStream(InputStream iStream) {
+		try {
+			BufferedReader in = new BufferedReader(new InputStreamReader(iStream));
+			String inputLine;
+			StringBuffer responseStringBuffer = new StringBuffer();
+
+			while ((inputLine = in.readLine()) != null) {
+				responseStringBuffer.append(inputLine);
+			}
+			in.close();
+			return responseStringBuffer;
+		} catch (Exception E) {
+			System.out.println("createInputStream() failed with exception: ");
+		}
+		return new StringBuffer();
 	}
 }
