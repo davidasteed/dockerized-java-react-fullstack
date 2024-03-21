@@ -19,10 +19,10 @@ import jakarta.validation.Valid;
 
 @RestController
 @CrossOrigin
-public class RestServiceController {
+public class SupervisorMgmtRestController {
 	private final SupervisorMgmtService supervisorMgmtService;
 
-	public RestServiceController(SupervisorMgmtService supervisorMgmtService) {
+	public SupervisorMgmtRestController(SupervisorMgmtService supervisorMgmtService) {
 		this.supervisorMgmtService = supervisorMgmtService;
 	}
 
